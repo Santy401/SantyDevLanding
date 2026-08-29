@@ -1,0 +1,68 @@
+---
+const projects = [
+  {
+    name: 'ESP32 PPP Bridge',
+    description: 'WiFi-to-Serial-PPP bridge for headless server access over USB. Built because my ThinkCentre has broken WiFi — an ESP32 and a USB cable solved it.',
+    tech: ['C++', 'ESP32', 'PPP', 'systemd'],
+    link: 'https://github.com/Santy401/ESP32-PPP-Bridge',
+    accent: 'link',
+  },
+  {
+    name: 'Craxker Dotfiles',
+    description: 'Automated provisioning for Arch Linux + Hyprland. One command sets up packages, configs, dev environment, and services from a fresh install.',
+    tech: ['Shell', 'Arch Linux', 'Hyprland', 'systemd'],
+    link: 'https://github.com/Santy401/Craxker.Omarchy.Dotfiles',
+    accent: 'accent',
+  },
+  {
+    name: 'Casa Museo Pozon',
+    description: 'Community museum website preserving Afro-Caribbean memory through pedagogy. A living digital archive for a real institution in Cartagena.',
+    tech: ['Astro', 'React', 'Tailwind', 'GSAP'],
+    link: 'https://github.com/Santy401/CasaMuseoPozon',
+    accent: 'error',
+  },
+  {
+    name: 'NexusCloud Homelab',
+    description: 'Docker Swarm cluster with Traefik, Tailscale, Pi-hole, and full network hardening. A private infrastructure lab for learning and building.',
+    tech: ['Docker', 'Traefik', 'Tailscale', 'UFW'],
+    link: '#',
+    accent: 'text-muted',
+  },
+];
+---
+
+<section id="projects" class="py-24 border-t border-surface-light">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="flex items-center gap-3 mb-12">
+      <span class="text-accent font-mono text-sm">$</span>
+      <h2 class="font-display text-2xl font-bold text-text">ls projects/</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6">
+      {projects.map((project) => (
+        <a
+          href={project.link}
+          target={project.link !== '#' ? '_blank' : undefined}
+          rel={project.link !== '#' ? 'noopener noreferrer' : undefined}
+          class="group bg-surface border border-surface-light rounded-lg p-6 hover:border-accent/30 transition-all duration-300"
+        >
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-display font-semibold text-text text-lg group-hover:text-accent transition-colors">
+              {project.name}
+            </h3>
+            <span class={`text-${project.accent} text-xs font-mono`}>↗</span>
+          </div>
+          <p class="text-text-muted text-sm leading-relaxed mb-4">
+            {project.description}
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {project.tech.map((t) => (
+              <span class="bg-surface-light text-text-muted text-xs font-mono px-2 py-1 rounded">
+                {t}
+              </span>
+            ))}
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

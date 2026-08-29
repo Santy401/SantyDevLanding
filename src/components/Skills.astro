@@ -1,0 +1,35 @@
+---
+const skills = [
+  { category: 'Linux', items: ['Ubuntu', 'Arch Linux', 'Hyprland', 'Bash', 'systemd'] },
+  { category: 'Infrastructure', items: ['Docker Swarm', 'Traefik', 'Tailscale', 'UFW', 'Pi-hole'] },
+  { category: 'Security', items: ['Nmap', 'Wireshark', 'Metasploit', 'Burp Suite', 'OWASP Top 10'] },
+  { category: 'Languages', items: ['C++', 'Python', 'JavaScript', 'TypeScript', 'HTML/CSS'] },
+  { category: 'Tools', items: ['Git', 'Neovim', 'Tmux', 'Lazygit', 'GitHub CLI'] },
+  { category: 'Web', items: ['Astro', 'React', 'Tailwind CSS', 'Next.js', 'Node.js'] },
+];
+---
+
+<section id="skills" class="py-24 border-t border-surface-light">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="flex items-center gap-3 mb-12">
+      <span class="text-accent font-mono text-sm">$</span>
+      <h2 class="font-display text-2xl font-bold text-text">cat skills.yaml</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      {skills.map((group) => (
+        <div class="bg-surface border border-surface-light rounded-lg p-5">
+          <h3 class="font-display font-semibold text-accent text-sm mb-3 uppercase tracking-wider">
+            {group.category}
+          </h3>
+          <ul class="space-y-1.5">
+            {group.items.map((item) => (
+              <li class="text-text-muted text-sm font-mono">
+                <span class="text-surface-light">-</span> {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

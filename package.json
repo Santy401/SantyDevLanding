@@ -1,21 +1,19 @@
 {
-  "name": "santiago_castellar",
-  "version": "0.1.0",
-  "private": true,
+  "name": "santydev-space",
+  "type": "module",
+  "version": "2.0.0",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "dependencies": {
-    "framer-motion": "^12.34.3",
-    "next": "16.1.6",
-    "react": "19.2.3",
-    "react-dom": "19.2.3"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "babel-plugin-react-compiler": "1.0.0",
-    "tailwindcss": "^4"
+    "astro": "^5.13.6",
+    "@astrojs/tailwind": "^6.0.2",
+    "@astrojs/react": "^4.3.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^3.4.17",
+    "framer-motion": "^12.23.12"
   }
 }

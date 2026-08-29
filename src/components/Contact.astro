@@ -1,0 +1,34 @@
+---
+const contacts = [
+  { label: 'GitHub', value: '@Santy401', href: 'https://github.com/Santy401' },
+  { label: 'Email', value: 'santiprocastellar7@gmail.com', href: 'mailto:santiprocastellar7@gmail.com' },
+  { label: 'Instagram', value: '@santy.dev', href: 'https://instagram.com/santy.dev' },
+];
+---
+
+<section id="contact" class="py-24 border-t border-surface-light">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="text-accent font-mono text-sm">$</span>
+      <h2 class="font-display text-2xl font-bold text-text">echo $CONTACT</h2>
+    </div>
+    <p class="text-text-muted mb-8 max-w-lg">
+      Want to collaborate or have a project in mind? Reach out.
+    </p>
+    <div class="grid sm:grid-cols-3 gap-4">
+      {contacts.map((c) => (
+        <a
+          href={c.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-surface border border-surface-light rounded-lg p-5 hover:border-accent/30 transition-all duration-200 group"
+        >
+          <div class="text-accent text-xs font-mono mb-1">{c.label}</div>
+          <div class="text-text text-sm font-display group-hover:text-accent transition-colors">
+            {c.value}
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
